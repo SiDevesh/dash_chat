@@ -134,13 +134,11 @@ class ChatInputToolbar extends StatelessWidget {
               if (showTraillingBeforeSend) ...trailling,
               if (sendButtonBuilder != null)
                 sendButtonBuilder!(() async {
-                  if (text!.length != 0) {
-                    await onSend!(message);
+                  await onSend!(message);
 
-                    controller!.text = "";
+                  controller!.text = "";
 
-                    onTextChange!("");
-                  }
+                  onTextChange!("");
                 })
               else
                 IconButton(
